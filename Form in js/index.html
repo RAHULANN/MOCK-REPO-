@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <form action="">
+
+        <label for="name">name</label>
+        <input type="text" id="name" placeholder="name">
+        <p id="nameerr"></p>
+        <br>
+        <br>
+        <label for="lastname">lastname</label>
+        <input type="text" id="lastname" placeholder="lastname">
+        <p id="lastnameerr"></p>
+        <br>
+        <br>
+       <label for=""> <input type="radio" name="gender" id="gender" value="male"> <span>male</span>  </label> 
+       <br>
+       <label for=""> <input type="radio" name="gender" id="genderr"value="female"> <span>female</span>  </label> 
+       <p id="generr"></p>
+    </form>
+    <button  onclick="submit()"> submit</button>
+</body>
+</html>
+
+
+<script>
+
+function submit(){
+
+console.log("ram")
+    let name=document.getElementById("name").value;
+
+    let lastname=document.getElementById("lastname").value;
+ let generr=document.getElementById("generr")
+
+    let radio =document.querySelector('input[name="gender"]:checked');
+
+    let arr=[]
+    generr.innerHTML=""
+    if(radio==null){
+        generr.innerHTML="ple select one option"
+        arr.push("err")
+    }
+
+let nameerr=document.getElementById("nameerr")
+let lastnameerr=document.getElementById("lastnameerr");
+
+
+   nameerr.innerHTML=""
+   if(name.length<5){
+    nameerr.innerHTML="name must be greter than 5"
+    arr.push("nameerr")
+   }
+   else{
+    for(let i=0;i<name.length;i++){
+
+  
+if(Number(name[i])){
+    nameerr.innerHTML="name must not conten any number"
+    arr.push("nameerr")
+    break;
+}
+}
+   }
+  lastnameerr.innerHTML=""
+
+   if(lastname.length<5){
+    lastnameerr.innerHTML="last name must be greter than 5"
+    arr.push("nameerr")
+   }
+   else{
+
+    for(let i=0;i<lastname.length;i++){
+
+if(Number(lastname[i])){
+
+    lastnameerr.innerHTML="last name must not conten any number"
+    arr.push("nameerr")
+    break;
+}
+}
+
+   }
+
+
+   if(arr.length==0){
+     
+    alert("your form submit successfulyy")
+      
+   }
+
+}
+
+
+
+
+
+</script>
