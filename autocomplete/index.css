@@ -1,0 +1,43 @@
+ul{
+    text-decoration: none;
+    list-style:none;
+    margin-top: 50px;
+    
+
+}
+li{
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 20px;
+
+}
+
+#mainbox{
+
+    
+    
+    margin: auto;
+
+    background-color: aqua;
+    height: 50vh;
+    width: 50%;
+    border-radius: 20px;
+    overflow: scroll;
+    position: relative;
+    margin-bottom: 40px;
+  
+}
+input{
+    width: 40%;
+    height: 30px;
+    outline: none;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 30px;
+    position: fixed;
+    margin-bottom: 40px;
+
+
+    
+ 
+}

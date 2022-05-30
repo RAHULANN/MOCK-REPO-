@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+
+    <div id="mainbox"> 
+
+
+        <input type="text" placeholder="search" id="inputbox">
+        <div id="show"></div>
+    </div>
+</body>
+</html>
+
+<script>
+
+
+    let inputbox=document.getElementById("inputbox").addEventListener("keyup" ,serchin)
+
+    function serchin(e){
+
+
+        
+let arr=[
+    "Rahul",
+    "Lodhi",
+    "pagri",
+    "panna",
+    "noida",
+    "mohandra",
+    "annu",
+    "pp",
+    "popo",
+    "puna",
+    "poppop"
+]
+        let input=document.getElementById("inputbox").value.toLowerCase()
+      let arrsort=arr.sort().map((e)=>e.toLowerCase())
+      let div=document.getElementById("show")
+     
+      let shoe= arrsort.filter((e)=>e.startsWith(input))
+      div.innerHTML=""
+   
+      if(input.length!=0&&shoe.length>0){
+
+        let showdiv=document.createElement("ul")
+showdiv.innerHTML=""
+        for(let i=0;i<shoe.length;i++){
+            let item=document.createElement("li")
+            item.addEventListener("click",()=>{
+
+                let int=document.getElementById("inputbox")
+                int.value=shoe[i]
+               
+            })
+            item.textContent=`${shoe[i]}`
+            showdiv.append(item)
+        }
+        div.innerHTML=""
+       div.append(showdiv)
+      }
+    }
+
+  
+</script>
